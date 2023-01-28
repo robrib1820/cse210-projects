@@ -2,7 +2,7 @@ using System;
 
 public class Journal 
 {
-    public void Display() {
+    public void FeatureSelected() {
         Boolean prompts = false;
         while (prompts == false) {
             Console.WriteLine("Welcome to the Journal Program!");
@@ -17,33 +17,36 @@ public class Journal
             int number = int.Parse(prompt);
             if (number == 1) {
                 AddEntry();
-            }
-            if (number == 2) {
+            }else if (number == 2) {
                 //DisplayEntries();
-            }
-            if (number == 3) {
+            }else if (number == 3) {
                 //LoadFile();
-            }
-            if (number == 4) {
+            }else if (number == 4) {
                 //SaveFile();
-            }
-            if (number == 5) {
+            }else if (number == 5) {
                 prompts = true;
                 Console.Write("Thank you for recording today! See you next time!");
             }
+            else {
+                Console.Write("ERROR: Type a valid number!");
+            }
         }
     }
-    public void AddEntry() {
+    public void Display(){
+
+    }
+    public void AddEntry(){
         Prompt question = new Prompt();
         question.QuestionPrompt();
+        Console.ReadLine();
     }
+    public void SaveFile() {
 
-    public void DisplayEntries() {
-        Prompt entries = new Prompt();
-        entries.QuestionPrompt();
+    }
+    public void LoadFile() {
 
-        foreach (string entry in entries.QuestionPrompt()) {
-            
-        }
+    }
+    public void CreateFileName() {
+        
     }
 }
