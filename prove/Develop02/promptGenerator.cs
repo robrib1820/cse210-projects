@@ -11,12 +11,14 @@ public class Prompt
         };
 
     
-    public void QuestionPrompt() {
-        for ( int prompt = 0; prompt < 5; prompt++){
-            _promptList[prompt];   
-        }
-        
+    public int GenerateRandomNUmber() {
+        Random randomNumber = new Random();
+        int numb = randomNumber.Next(1, 5);
+        return numb;
     }
-
-
+    public string QuestionGenerator() {
+        Console.WriteLine(_promptList[GenerateRandomNUmber()]);
+        string question = Console.ReadLine();
+        return question;
+    }
 }
