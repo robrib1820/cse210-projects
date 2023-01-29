@@ -16,9 +16,9 @@ public class Prompt
         int numb = randomNumber.Next(1, 5);
         return numb;
     }
-    public string QuestionGenerator() {
+    public void QuestionGenerator() {
         Console.WriteLine(_promptList[GenerateRandomNUmber()]);
-        string question = Console.ReadLine();
-        return question;
+        // string question = Console.ReadLine();
+        // return question;
     }
 }

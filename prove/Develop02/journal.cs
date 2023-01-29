@@ -20,10 +20,15 @@ public class Journal
             string prompt = Console.ReadLine();
             int number = int.Parse(prompt);
             if (number == 1) {
-                AddEntry();
+                ShowQuestion();
+                string answer = Console.ReadLine();
+                Entry entries = new Entry();
+                entries._journalEntry = answer;
+
+
             }else if (number == 2) {
                 Entry list = new Entry();
-                list.Display();
+                list.JournalEntry();
             }else if (number == 3) {
                 //LoadFile();
             }else if (number == 4) {
@@ -40,19 +45,11 @@ public class Journal
     public void DisplayEntries(){
         Console.WriteLine($"Data: {_entryDate}  Question: {_promptQuestion}  Written: {_journalEntry}");
     }
-    public void AddEntry(){
+    public void ShowQuestion(){
         Prompt question = new Prompt();
-        string questions = question.QuestionGenerator();
-        string entry = Console.ReadLine();
-
-        Journal datas = new Journal();
-        
-        datas._promptQuestion = questions;
-        datas._journalEntry = entry;
-
-        Entry list = new Entry();
-        list._tempJournalEntry.Add(datas);
+        question.QuestionGenerator();
     }
+
     public void SaveFile() {
 
     }
