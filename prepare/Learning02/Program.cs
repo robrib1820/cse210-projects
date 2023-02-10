@@ -16,9 +16,9 @@ class Program
         job2._startYear = "2021";
         job2._endYear = "2023";
 
-        job1.Display();
-        Console.WriteLine("-----------------------------");
-        job2.Display();
+        // job1.Display();
+        // Console.WriteLine("-----------------------------");
+        // job2.Display();
 
         Resume myResume = new Resume();
         myResume._name = "Robson Ribeiro";
