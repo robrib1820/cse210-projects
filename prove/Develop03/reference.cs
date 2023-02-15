@@ -6,7 +6,7 @@ class Reference {
     private int _chapter;
     private string _book;
 
-    private string _secondeVerse; //if necessary
+    private int _secondeVerse; //if necessary
 
     //constructors
     public Reference() {
@@ -14,10 +14,11 @@ class Reference {
         _chapter = 31;
         _verse = 20;
     }
-    public Reference(int verse) {
+    public Reference(int verse, int secondeVerse) {
         _book = "2 Néfi";
         _chapter = 31;
         _verse = verse;
+        _secondeVerse = secondeVerse;
     }
     // Getters and Setters
     public string GetReference() {

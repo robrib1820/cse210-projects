@@ -18,7 +18,9 @@ class Program
             {
                 option = false;
             }
-            
+            Word word = new Word();
+            word.GetRenderedText(scripture.list());
+            word.Hide();
         }
     }
 }

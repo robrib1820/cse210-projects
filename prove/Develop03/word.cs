@@ -10,12 +10,15 @@ class Word {
 
     //Constructors
     //the constructor needs to set the visibitily or the user needs to pass in?
-    public Word(string wordText, int visibility) {
+    public Word() {
 
     }
     //Methods
     public void Hide() {
-
+        Random num = new Random();
+        int randIndex = num.Next(_words.Count);
+        string selectedNum = _words[randIndex];
+        Console.WriteLine(selectedNum);
     }
     public void Shown() {
 
@@ -23,7 +26,7 @@ class Word {
     public void IsHidden() {
 
     }
-    public string GetRenderedText(string value) {
-        return value;
+    public void GetRenderedText(List<string> list) {
+        _words = list;
     }
 }
