@@ -1,11 +1,4 @@
 using System;
-
-<<<<<<< HEAD
-class Journal {
-
-    
-}
-=======
 public class Journal 
 {
     public string _journalEntry;
@@ -52,7 +45,7 @@ public class Journal
         Console.WriteLine($"Data: {_entryDate}  Question: {_promptQuestion}  Written: {_journalEntry}");
     }
     public void ShowQuestion(){
-        Prompt question = new Prompt();
+        PromptGenerator question = new PromptGenerator();
         question.QuestionGenerator();
     }
 
@@ -66,4 +59,3 @@ public class Journal
         
     }
 }
->>>>>>> 17f85f8f4249ec6ba29750f4b8714af7a7491c0f
