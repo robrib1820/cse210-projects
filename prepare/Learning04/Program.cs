@@ -18,6 +18,6 @@ class Program
        string writingInfo = writing.GetWritingInformation();
        Console.WriteLine("--------------------------------");
        Console.WriteLine(write);
-       Console.WriteLine(writingInfo);
+       Console.WriteLine(write);
     }
 }
