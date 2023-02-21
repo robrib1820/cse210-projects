@@ -1,5 +1,4 @@
 using System;
-
 public class Journal 
 {
     public string _journalEntry;
@@ -46,7 +45,7 @@ public class Journal
         Console.WriteLine($"Data: {_entryDate}  Question: {_promptQuestion}  Written: {_journalEntry}");
     }
     public void ShowQuestion(){
-        Prompt question = new Prompt();
+        PromptGenerator question = new PromptGenerator();
         question.QuestionGenerator();
     }
 

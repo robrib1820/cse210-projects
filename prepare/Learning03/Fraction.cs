@@ -1,6 +1,6 @@
 using System;
-
 public class Fraction
+
 {
     private int _top;
     private int _bottom;
@@ -30,8 +30,18 @@ public class Fraction
         return text;
     }
 
-    public double GetDecimalValue()
-    {
+
+    public double GetDecimalValue () {
         return (double)_top / (double)_bottom;
     }
+
+    public void setTop(int number) {
+        _top = number;
+    }
+
+    public void setBottom(int number) {
+        _bottom = number;
+    }
+    
+
 }

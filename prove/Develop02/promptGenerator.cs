@@ -1,7 +1,7 @@
 using System;
 
-public class Prompt
-{
+public class PromptGenerator {
+    
     string[] _promptList = {
         "What was the best part of your day?",
         "What should you have done better?",
