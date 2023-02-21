@@ -8,11 +8,12 @@ public class Activity
     private string _descriptionActivity;
     private string _completedSeconds;
     protected int _prepareTime;
-    protected string _beReady;
+    protected int _beReady;
     //Constructors
     public Activity(string name, string description) {
         _activityName = name;
         _descriptionActivity = description;
+        _beReady = 4;
     }
     //Methods
     public void DisplayStartMessage() {
@@ -48,4 +49,58 @@ public class Activity
         }
         Console.Clear();
     }
+
+    public void PauseCountdownTimer() {
+        for (int i = 0; i < 1; i++)
+        {
+            Console.Write("\bYou may begin in: 5");
+            Thread.Sleep(1000);
+            Console.Write("\b4");
+            Thread.Sleep(1000);
+            Console.Write("\b3");
+            Thread.Sleep(1000);
+            Console.Write("\b2");
+            Thread.Sleep(1000);
+            Console.Write("\b1");
+            Thread.Sleep(1000);
+        }
+        Console.Clear();
+    }
+    public void BeReady() {
+        Console.WriteLine("Get ready...");
+        Console.WriteLine();
+        for (int i = 1; i <= _beReady; i++)
+        { 
+            Console.Write("\b—");
+            Thread.Sleep(166);
+            Console.Write("\b|");
+            Thread.Sleep(166);
+            Console.Write("\b/");
+            Thread.Sleep(166);
+            Console.Write("\b—");
+            Thread.Sleep(166);
+            Console.Write("\b\\");
+            Thread.Sleep(166);
+            Console.Write("\b|");
+            Thread.Sleep(166);
+            Console.Write("\b/");
+        }
+    }
+    public void SessionTime() {
+        DateTime startTime = DateTime.Now;
+        DateTime futureTime = startTime.AddSeconds(5000);
+
+        Thread.Sleep(6000);
+
+        DateTime currentTime = DateTime.Now;
+        if (currentTime < futureTime)
+        {
+            Console.WriteLine("We have not arrived at our future time yet...");
+        }
+        else 
+        {
+            Console.WriteLine("yeah!!");
+        }
+    }
+
 }
