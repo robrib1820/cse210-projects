@@ -9,27 +9,43 @@ public class Activity
     private string _completedSeconds;
     protected int _prepareTime;
     protected string _beReady;
+    //Constructors
+    public Activity(string name, string description) {
+        _activityName = name;
+        _descriptionActivity = description;
+    }
     //Methods
     public void DisplayStartMessage() {
         Console.WriteLine($"Welcome to the {_activityName}");
+        Console.WriteLine();
         Console.WriteLine(_descriptionActivity);
+        Console.WriteLine();
         Console.Write("How long, in seconds, would you like for your session?");
         string seconds = Console.ReadLine();
         _durationSeconds = int.Parse(seconds);
     }
-    public void DisplaEndMessage() {
+    public void DisplayEndMessage() {
         Console.WriteLine("Well done");
+        Console.WriteLine();
         Console.WriteLine($"You have completed another {_durationSeconds} seconds of the {_activityName}");
     }
     public void PauseSpinner() {
-        for (int i = 0; i <= _durationSeconds; i++)
+        for (int i = 1; i <= _durationSeconds; i++)
         { 
-            Console.Write("—");
-            Thread.Sleep(500);
-            Console.Write("\b \b");
-            Console.Write("|");
-            Thread.Sleep(500);
-            Console.Write("\b \b");
+            Console.Write("\b—");
+            Thread.Sleep(166);
+            Console.Write("\b|");
+            Thread.Sleep(166);
+            Console.Write("\b/");
+            Thread.Sleep(166);
+            Console.Write("\b—");
+            Thread.Sleep(166);
+            Console.Write("\b\\");
+            Thread.Sleep(166);
+            Console.Write("\b|");
+            Thread.Sleep(166);
+            Console.Write("\b/");
         }
+        Console.Clear();
     }
 }
