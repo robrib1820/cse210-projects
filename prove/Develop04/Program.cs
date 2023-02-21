@@ -23,9 +23,7 @@ class Program
                 main.PauseSpinner();
                 main.DisplaEndMessage();
             }
-            else {
-                Console.WriteLine("teste");
-            }
+            
 
         }
     }
