@@ -1,41 +1,45 @@
 using System;
 
 public class Breathing : Activity {
-    private string _breathIn = "Breath In...";
-    private string _breathOut = "Breath Out...";
+    private string _breatheIn = "Breathe In...";
+    private string _breatheOut = "Now breathe Out...";
 
     public Breathing(string name, string description) : base(name, description) {
 
     }
     public void RunBreathingActivity() {
+        BeReady();
         for (int i = 0; i <= 4; i++)
         {
             BreathIn();
+            Console.WriteLine();
             BreathOut();
+            Console.WriteLine();
+            Console.WriteLine();
         }
     }
     public void BreathIn() {
-        Console.Write($"\b{_breathIn}5");
+        Console.Write($"\b{_breatheIn}5");
         Thread.Sleep(1000);
-        Console.Write($"\b{_breathIn}4");
+        Console.Write($"\b4");
         Thread.Sleep(1000);
-        Console.Write($"\b{_breathIn}3");
+        Console.Write($"\b3");
         Thread.Sleep(1000);
-        Console.Write($"\b{_breathIn}2");
+        Console.Write($"\b2");
         Thread.Sleep(1000);
-        Console.Write($"\b{_breathIn}1");
+        Console.Write($"\b1");
         Thread.Sleep(1000);
     }
     public void BreathOut() {
-        Console.Write($"\b{_breathOut}5");
+        Console.Write($"\b{_breatheOut}5");
         Thread.Sleep(1000);
-        Console.Write($"\b{_breathOut}4");
+        Console.Write($"\b4");
         Thread.Sleep(1000);
-        Console.Write($"\b{_breathOut}3");
+        Console.Write($"\b3");
         Thread.Sleep(1000);
-        Console.Write($"\b{_breathOut}2");
+        Console.Write($"\b2");
         Thread.Sleep(1000);
-        Console.Write($"\b{_breathOut}1");
+        Console.Write($"\b1");
         Thread.Sleep(1000);
     }
 }

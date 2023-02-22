@@ -20,6 +20,7 @@ class Program
             {
                 Breathing main = new Breathing("Breathing Activity","This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.");
                 main.DisplayStartMessage();
+                Console.Clear();
                 main.RunBreathingActivity();
                 main.DisplayEndMessage();
             }

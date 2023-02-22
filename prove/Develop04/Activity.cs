@@ -27,25 +27,15 @@ public class Activity
     }
     public void DisplayEndMessage() {
         Console.WriteLine("Well done");
-        Console.WriteLine();
+        MiniSpinner();
         Console.WriteLine($"You have completed another {_durationSeconds} seconds of the {_activityName}");
+        MiniSpinner();
+        Console.Clear();
     }
     public void PauseSpinner() {
         for (int i = 1; i <= _durationSeconds; i++)
         { 
-            Console.Write("\b—");
-            Thread.Sleep(166);
-            Console.Write("\b|");
-            Thread.Sleep(166);
-            Console.Write("\b/");
-            Thread.Sleep(166);
-            Console.Write("\b—");
-            Thread.Sleep(166);
-            Console.Write("\b\\");
-            Thread.Sleep(166);
-            Console.Write("\b|");
-            Thread.Sleep(166);
-            Console.Write("\b/");
+            MiniSpinner();
         }
         Console.Clear();
     }
@@ -69,22 +59,7 @@ public class Activity
     public void BeReady() {
         Console.WriteLine("Get ready...");
         Console.WriteLine();
-        for (int i = 1; i <= _beReady; i++)
-        { 
-            Console.Write("\b—");
-            Thread.Sleep(166);
-            Console.Write("\b|");
-            Thread.Sleep(166);
-            Console.Write("\b/");
-            Thread.Sleep(166);
-            Console.Write("\b—");
-            Thread.Sleep(166);
-            Console.Write("\b\\");
-            Thread.Sleep(166);
-            Console.Write("\b|");
-            Thread.Sleep(166);
-            Console.Write("\b/");
-        }
+        MiniSpinner();
     }
     public void SessionTime() {
         DateTime startTime = DateTime.Now;
@@ -102,5 +77,18 @@ public class Activity
             Console.WriteLine("yeah!!");
         }
     }
-
+    public void MiniSpinner() {
+        for (int i = 1; i <= 4; i++)
+        { 
+            Console.Write("\b|");
+            Thread.Sleep(250);
+            Console.Write("\b/");
+            Thread.Sleep(250);
+            Console.Write("\b—");
+            Thread.Sleep(250);
+            Console.Write("\b\\");
+            Thread.Sleep(250);
+        }
+        Console.Write("\b \b");
+    }
 }
