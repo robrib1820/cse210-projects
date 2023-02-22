@@ -23,19 +23,18 @@ public class Activity
         Console.WriteLine();
         Console.Write("How long, in seconds, would you like for your session?");
         string seconds = Console.ReadLine();
-        _durationSeconds = int.Parse(seconds);
     }
     public void DisplayEndMessage() {
-        Console.WriteLine("Well done");
-        MiniSpinner();
+        Console.WriteLine("Well done!!");
+        MiniSpinner(4);
         Console.WriteLine($"You have completed another {_durationSeconds} seconds of the {_activityName}");
-        MiniSpinner();
+        MiniSpinner(4);
         Console.Clear();
     }
     public void PauseSpinner() {
         for (int i = 1; i <= _durationSeconds; i++)
         { 
-            MiniSpinner();
+            MiniSpinner(4);
         }
         Console.Clear();
     }
@@ -59,7 +58,7 @@ public class Activity
     public void BeReady() {
         Console.WriteLine("Get ready...");
         Console.WriteLine();
-        MiniSpinner();
+        MiniSpinner(4);
     }
     public void SessionTime() {
         DateTime startTime = DateTime.Now;
@@ -77,8 +76,8 @@ public class Activity
             Console.WriteLine("yeah!!");
         }
     }
-    public void MiniSpinner() {
-        for (int i = 1; i <= 4; i++)
+    public void MiniSpinner(int numTimes) {
+        for (int i = 1; i <= numTimes; i++)
         { 
             Console.Write("\b|");
             Thread.Sleep(250);

@@ -28,7 +28,8 @@ class Program
             {
                 Reflecting main = new Reflecting("Reflecting Activity","This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.");
                 main.DisplayStartMessage();
-                main.PauseSpinner();
+                Console.Clear();
+                main.RunReflectingActivity();
                 main.DisplayEndMessage();
             }
             else if (option == "3")
@@ -36,6 +37,7 @@ class Program
                 Listing main = new Listing("Listing Activity","This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.");
                 main.DisplayStartMessage();
                 main.PauseSpinner();
+                main.RunListingActivity();
                 main.DisplayEndMessage();
             }
             else 
