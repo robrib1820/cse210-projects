@@ -9,46 +9,33 @@ public class Listing : Activity
         "When have you felt the Holy Ghost this month?",
         "Who are some of your personal heroes?",
     };
-    private string _randomPrompt;
     private int _randomPromptNumber;
-    private int _numItems;
+    private int _numPrompts = 0;
 
-    public Listing(string name, string description) : base(name, description) {
+    public Listing() {
 
     }
+    public Listing(string name, string description) : base(name, description) {
+        
+    }
     public void RunListingActivity() {
-        BeReady();
-        Console.WriteLine("List as many responses you can to the following prompt:");
-        Console.WriteLine($"--- {_promptQuestions[GetRandomPromptNumber()]} ---");
-        PauseCountdownTimer();
-        ResponseList();
-
+        Console.Write("> ");
+        Console.ReadLine();
+        _numPrompts += 1;
     }
     public int GetRandomPromptNumber() {
         Random num = new Random();
         _randomPromptNumber = num.Next(_promptQuestions.Count);
         return _randomPromptNumber;
     }
-    public string GetRandomPrompt() {
-        return _randomPrompt;
+    
+    public void DisplayPrompt() {
+        Console.WriteLine("List as many responses you can to the following prompt:");
+        Console.WriteLine($"--- {_promptQuestions[GetRandomPromptNumber()]} ---");
+        PauseCountdownTimer();
     }
-    public int GetNumListedItems() {
-        return _numItems;
-    }
-    public void ResponseList() {
-        _numItems = 0;
-        Boolean ListingThings = true;
-        while (ListingThings == true)
-        {
-            Console.Write("> ");
-            Console.ReadLine();
-            _numItems += 1;
 
-            if (_numItems == 4)
-            {
-                ListingThings = false;
-            }
-        } 
-        Console.WriteLine($"You listed {_numItems} items!");
+    public void GetNumbPrompts() {
+        Console.WriteLine($"You listed {_numPrompts} items!");
     }
 }

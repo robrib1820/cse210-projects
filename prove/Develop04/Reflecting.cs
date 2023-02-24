@@ -19,6 +19,7 @@ public class Reflecting : Activity
         "What did you learn about yourself through this experience?",
         "How can you keep this experience in mind in the future?",
         };
+
     private int _randomPromptNumber;
     private int _randomPromptQuestionNumber;
     private string _randomPrompt;
@@ -27,20 +28,10 @@ public class Reflecting : Activity
 
     }
     public void RunReflectingActivity() {
-        BeReady();
-        Console.WriteLine("Consider the following prompt: ");
-        Console.WriteLine();
-        Console.WriteLine($"--- {_prompts[GetRandomPromptNumber()]} ---");
-        Console.WriteLine();
-        Console.WriteLine("When you have something in mind, press enter to continue");
-        Console.ReadLine();
-        Console.WriteLine();
-        Console.WriteLine("Now ponder on each of the following questions as they related to this experience");
-        PauseCountdownTimer();
         Console.WriteLine($"> {_questions[GetRandomQuestionPromptNumber()]}");
-        MiniSpinner(12);
+        MiniSpinner(8);
         Console.WriteLine($"> {_questions[GetRandomQuestionPromptNumber()]}");
-        MiniSpinner(12);
+        MiniSpinner(8);
     }
     public int GetRandomPromptNumber() {
         Random num = new Random();
@@ -65,6 +56,16 @@ public class Reflecting : Activity
     public void SetRandomQuestionPrompt(string questionPrompt) {
         _randomQuestionPrompt = questionPrompt;
     }
-
-
+    
+    public void DisplayPrompt() {
+        Console.WriteLine("Consider the following prompt: ");
+        Console.WriteLine();
+        Console.WriteLine($"--- {_prompts[GetRandomPromptNumber()]} ---");
+        Console.WriteLine();
+        Console.WriteLine("When you have something in mind, press enter to continue");
+        Console.ReadLine();
+        Console.WriteLine();
+        Console.WriteLine("Now ponder on each of the following questions as they related to this experience");
+        PauseCountdownTimer();
+    }
 }

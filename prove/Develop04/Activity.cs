@@ -6,10 +6,12 @@ public class Activity
     private string _activityName;
     private int _durationSeconds;
     private string _descriptionActivity;
-    private string _completedSeconds;
     protected int _prepareTime;
     protected int _beReady;
     //Constructors
+    public Activity() {
+
+    }
     public Activity(string name, string description) {
         _activityName = name;
         _descriptionActivity = description;
@@ -23,6 +25,8 @@ public class Activity
         Console.WriteLine();
         Console.Write("How long, in seconds, would you like for your session?");
         string seconds = Console.ReadLine();
+        int secondsInt = int.Parse(seconds);
+        SetDurationSeconds(secondsInt);
     }
     public void DisplayEndMessage() {
         Console.WriteLine("Well done!!");
@@ -32,7 +36,7 @@ public class Activity
         Console.Clear();
     }
     public void PauseSpinner() {
-        for (int i = 1; i <= _durationSeconds; i++)
+        for (int i = 1; i <= 1; i++)
         { 
             MiniSpinner(4);
         }
@@ -60,21 +64,13 @@ public class Activity
         Console.WriteLine();
         MiniSpinner(4);
     }
-    public void SessionTime() {
-        DateTime startTime = DateTime.Now;
-        DateTime futureTime = startTime.AddSeconds(5000);
-
-        Thread.Sleep(6000);
-
-        DateTime currentTime = DateTime.Now;
-        if (currentTime < futureTime)
-        {
-            Console.WriteLine("We have not arrived at our future time yet...");
-        }
-        else 
-        {
-            Console.WriteLine("yeah!!");
-        }
+    public void SetDurationSeconds(int numberOfSeconds) {
+        _durationSeconds = numberOfSeconds;
+    }
+    public int GetDurantionSeconds() {
+        return _durationSeconds;
+        
+        
     }
     public void MiniSpinner(int numTimes) {
         for (int i = 1; i <= numTimes; i++)
@@ -90,4 +86,14 @@ public class Activity
         }
         Console.Write("\b \b");
     }
+
+    // public void testeFunction() {
+    //     DateTime futureTime = DateTime.Now.AddSeconds(30);
+    //     while (DateTime.Now < futureTime)
+    //     {
+    //         Listing teste = new Listing();
+    //         teste.RunListingActivity();
+    //     }
+    //     Console.WriteLine("Task completed");
+    // }
 }
