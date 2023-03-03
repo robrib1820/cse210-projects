@@ -8,6 +8,7 @@ public class Activity
     private string _descriptionActivity;
     protected int _prepareTime;
     protected int _beReady;
+    private int _performedTimes;
     //Constructors
     public Activity() {
 
@@ -87,13 +88,10 @@ public class Activity
         Console.Write("\b \b");
     }
 
-    // public void testeFunction() {
-    //     DateTime futureTime = DateTime.Now.AddSeconds(30);
-    //     while (DateTime.Now < futureTime)
-    //     {
-    //         Listing teste = new Listing();
-    //         teste.RunListingActivity();
-    //     }
-    //     Console.WriteLine("Task completed");
-    // }
+    public void SetPerformedTimes(int NumTimes) {
+        _performedTimes = NumTimes;
+    }
+    public int GetPerfomedTimes() {
+        return _performedTimes;
+    }
 }

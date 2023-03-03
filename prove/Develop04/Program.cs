@@ -17,6 +17,7 @@ class Program
             if (option == "1")
             {
                 Breathing main = new Breathing("Breathing Activity","This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.");
+                int breathing = 0;
                 main.DisplayStartMessage();
                 main.BeReady();
                 DateTime startTime = DateTime.Now;
@@ -27,10 +28,12 @@ class Program
                     main.RunBreathingActivity();
                 }
                 main.DisplayEndMessage();
+                breathing +=1;
             }
             else if (option == "2")
             {
                 Reflecting main = new Reflecting("Reflecting Activity","This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.");
+                int reflecting = 0;
                 main.DisplayStartMessage();
                 main.BeReady();
                 main.DisplayPrompt();
@@ -42,10 +45,12 @@ class Program
                     main.RunReflectingActivity();
                 }
                 main.DisplayEndMessage();
+                reflecting +=1;
             }
             else if (option == "3")
             {
                 Listing main = new Listing("Listing Activity","This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.");
+                int listing = 0;
                 main.DisplayStartMessage();
                 main.BeReady();
                 main.DisplayPrompt();
@@ -58,10 +63,15 @@ class Program
                 }
                 main.GetNumbPrompts();
                 main.DisplayEndMessage();
+                listing +=1;
             }
             else 
             {
                 menu = false;
+                // Console.WriteLine("NUmber of times you performed each activity: ");
+                // Console.WriteLine($"Breathing Activity: {breathing}");
+                // Console.WriteLine($"Reflecting Activity: {reflecting}");
+                // Console.WriteLine($"Listing Activity: {listing}");
                 // sessionTime.testeFunction();
             }
 
