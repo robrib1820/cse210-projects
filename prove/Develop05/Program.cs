@@ -5,12 +5,14 @@ class Program
     static void Main(string[] args)
     {
         List<string> goalsList = new List<string>();
+        List<int> pointsList = new List<int>();
         Boolean menu = true;
         int option = 0;
         int points = 0;
         while (menu == true)
         {
-            Console.WriteLine($"You have {points} points!");   
+            Console.WriteLine($"You have {points} points!");  
+            Console.WriteLine(); 
             Console.WriteLine("Menu Options:");
             Console.WriteLine("1. Create New Goal");
             Console.WriteLine("2. List Goals");
@@ -22,12 +24,7 @@ class Program
             string choice = Console.ReadLine();
             option = int.Parse(choice);
             
-
-            if (option == 6) 
-            {
-                menu = false;
-            }
-            else if (option == 1)
+            if (option == 1)
             {
                 Console.WriteLine("The types of Goals are:");
                 Console.WriteLine("1. Simple Goal");
@@ -46,8 +43,11 @@ class Program
                 string pointsGoal = Console.ReadLine();
                 int pointsOfGoal = int.Parse(pointsGoal);
 
-                string itemToList = ($"[ ] {goalName}: {goalDescription}");
-                goalsList.Add(itemToList);
+                string goalToList = ($"[ ] {goalName}: {goalDescription}");
+                int pointToList = pointsOfGoal;
+                goalsList.Add(goalToList);
+                pointsList.Add(pointToList);
+                
                 
 
                 if (goalOption == 1)
@@ -110,7 +110,16 @@ class Program
                 Console.Write("Which goal did you accomplish? ");
                 string accomplishedGoal = Console.ReadLine();
                 int accomplished = int.Parse(accomplishedGoal);
-                
+
+                Console.WriteLine($"You earned {pointsList[accomplished - 1]} points!");
+                points += pointsList[accomplished - 1];
+                Console.WriteLine($"You now have {points}.");
+                Console.WriteLine();
+
+            }
+            else if (option == 6) 
+            {
+                menu = false;
             }
         }
 
