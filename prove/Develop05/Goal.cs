@@ -49,7 +49,7 @@ public  abstract class  Goal
     public abstract void ReturnList();
 
     // public abstract int CalculateScore();
-    // public abstract int RecordEvent(int pointValue);
+    public abstract void RecordEvent();
     // public  abstract Boolean IsComplete(Boolean complete);
 
 }

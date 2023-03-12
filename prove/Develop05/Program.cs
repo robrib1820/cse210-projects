@@ -4,6 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        List<string> goalsList = new List<string>();
         Boolean menu = true;
         int option = 0;
         int points = 0;
@@ -45,6 +46,10 @@ class Program
                 string pointsGoal = Console.ReadLine();
                 int pointsOfGoal = int.Parse(pointsGoal);
 
+                string itemToList = ($"[ ] {goalName}: {goalDescription}");
+                goalsList.Add(itemToList);
+                
+
                 if (goalOption == 1)
                 {
                     Simple goal = new Simple(goalName, goalDescription, pointsOfGoal);
@@ -64,23 +69,47 @@ class Program
             }
             else if (option == 2)
             {   
-                List<Goal> listOfGoals = new List<Goal>();
-                Simple simpleGoal = new Simple();
-                Eternal eternalGoal = new Eternal();
-                CheckList checkListGoal = new CheckList();
-                listOfGoals.Add(simpleGoal);
-                listOfGoals.Add(eternalGoal);
-                listOfGoals.Add(checkListGoal);
-                simpleGoal.ReturnList();
-                eternalGoal.ReturnList();
-                checkListGoal.ReturnList();
-                foreach (Goal goal in listOfGoals)
+                int counter = 1;
+                Console.WriteLine("--------------------------------------------------------");
+                Console.WriteLine("Your goals are: ");
+                foreach( string goal in goalsList)
                 {
-                    Console.WriteLine("--------------------------------");
-                    Console.WriteLine("YOU LIST ARE");
-                    // Console.WriteLine(goal.ReturnList());
-                    Console.WriteLine("--------------------------------");
+                    Console.WriteLine($"{counter}. {goal}");
+                    counter ++;
                 }
+                Console.WriteLine("--------------------------------------------------------");
+                // List<Goal> listOfGoals = new List<Goal>();
+                // Simple simpleGoal = new Simple();
+                // Eternal eternalGoal = new Eternal();
+                // CheckList checkListGoal = new CheckList();
+                // listOfGoals.Add(simpleGoal);
+                // listOfGoals.Add(eternalGoal);
+                // listOfGoals.Add(checkListGoal);
+                // simpleGoal.ReturnList();
+                // eternalGoal.ReturnList();
+                // checkListGoal.ReturnList();
+                // foreach (Goal goal in listOfGoals)
+                // {
+                //     Console.WriteLine("--------------------------------");
+                //     Console.WriteLine("YOU LIST ARE");
+                //     // Console.WriteLine(goal.ReturnList());
+                //     Console.WriteLine("--------------------------------");
+                // }
+            }
+            else if (option == 5)
+            {
+                int counter = 1;
+                Console.WriteLine("--------------------------------------------------------");
+                Console.WriteLine("Your goals are: ");
+                foreach( string goal in goalsList)
+                {
+                    Console.WriteLine($"{counter}. {goal}");
+                    counter ++;
+                }
+                Console.WriteLine("--------------------------------------------------------");
+                Console.Write("Which goal did you accomplish? ");
+                string accomplishedGoal = Console.ReadLine();
+                int accomplished = int.Parse(accomplishedGoal);
                 
             }
         }
