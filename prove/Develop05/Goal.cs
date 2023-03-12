@@ -2,12 +2,12 @@ using System;
 
 public  abstract class  Goal
 {
-    protected int _score = 0;
-    protected string _goalName;
-    protected string _goalDescription;
+    private int _score = 0;
+    private string _goalName;
+    private string _goalDescription;
     
-    protected int _awardedPoints;
-    protected List<Goal> _listGoals = new List<Goal>();
+    private int _awardedPoints;
+    private List<Goal> _listGoals = new List<Goal>();
 
     //Methods
     public Goal() {
@@ -46,6 +46,7 @@ public  abstract class  Goal
     public List<Goal> SetListGoal(List<Goal> goal) {
          return _listGoals = goal;
     }
+    public abstract void ReturnList();
 
     // public abstract int CalculateScore();
     // public abstract int RecordEvent(int pointValue);

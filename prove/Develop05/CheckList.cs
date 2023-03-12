@@ -7,6 +7,7 @@ public class CheckList : Goal
     private int _timesCompleted;
     private int _counterGoal;
     private Boolean fullycompletedCheck;
+    protected List<string> _listGoalsCheck = new List<string>();
     
     public CheckList() {
 
@@ -16,6 +17,12 @@ public class CheckList : Goal
     }
     
     // //Methods
+    public void AddToList() {
+        _listGoalsCheck.Add($"({GetGoalName()} {GetGoalDescription()}");
+    }
+    public override void ReturnList() {
+        Console.WriteLine(_listGoalsCheck[0]);
+    }
     public int GetBonusPoint() {
         return _bonusPoint;
     }

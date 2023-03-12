@@ -36,40 +36,26 @@ class Program
                 string goalChoice = Console.ReadLine();
                 int goalOption = int.Parse(goalChoice);
 
+
+                Console.WriteLine("What is the name of your goal? ");
+                string goalName = Console.ReadLine();
+                Console.WriteLine("What is a short description of it? ");
+                string goalDescription = Console.ReadLine();
+                Console.WriteLine("What is the amount of points associated with this goal? ");
+                string pointsGoal = Console.ReadLine();
+                int pointsOfGoal = int.Parse(pointsGoal);
+
                 if (goalOption == 1)
                 {
-                    Console.WriteLine("What is the name of your goal? ");
-                    string goalName = Console.ReadLine();
-                    Console.WriteLine("What is a short description of it? ");
-                    string goalDescription = Console.ReadLine();
-                    Console.WriteLine("What is the amount of points associated with this goal? ");
-                    string pointsGoal = Console.ReadLine();
-                    int pointsOfGoal = int.Parse(pointsGoal);
                     Simple goal = new Simple(goalName, goalDescription, pointsOfGoal);
-                    Console.WriteLine(goal.GetGoalName());
                     
                 }
                 else if (goalOption == 2)
                 {
-                    Console.WriteLine("What is the name of your goal? ");
-                    string goalName = Console.ReadLine();
-                    Console.WriteLine("What is a short description of it? ");
-                    string goalDescription = Console.ReadLine();
-                    Console.WriteLine("What is the amount of points associated with this goal? ");
-                    string pointsGoal = Console.ReadLine();
-                    int pointsOfGoal = int.Parse(pointsGoal);
                     Eternal goal = new Eternal(goalName, goalDescription, pointsOfGoal);
-
                 }
                 else if (goalOption == 3)
                 {
-                    Console.WriteLine("What is the name of your goal? ");
-                    string goalName = Console.ReadLine();
-                    Console.WriteLine("What is a short description of it? ");
-                    string goalDescription = Console.ReadLine();
-                    Console.WriteLine("What is the amount of points associated with this goal? ");
-                    string pointsGoal = Console.ReadLine();
-                    int pointsOfGoal = int.Parse(pointsGoal);
                     CheckList goal = new CheckList(goalName, goalDescription, pointsOfGoal);
                 }
                 else{
@@ -78,6 +64,23 @@ class Program
             }
             else if (option == 2)
             {   
+                List<Goal> listOfGoals = new List<Goal>();
+                Simple simpleGoal = new Simple();
+                Eternal eternalGoal = new Eternal();
+                CheckList checkListGoal = new CheckList();
+                listOfGoals.Add(simpleGoal);
+                listOfGoals.Add(eternalGoal);
+                listOfGoals.Add(checkListGoal);
+                simpleGoal.ReturnList();
+                eternalGoal.ReturnList();
+                checkListGoal.ReturnList();
+                foreach (Goal goal in listOfGoals)
+                {
+                    Console.WriteLine("--------------------------------");
+                    Console.WriteLine("YOU LIST ARE");
+                    // Console.WriteLine(goal.ReturnList());
+                    Console.WriteLine("--------------------------------");
+                }
                 
             }
         }
