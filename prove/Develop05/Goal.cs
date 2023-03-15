@@ -61,7 +61,7 @@ public abstract class  Goal
     // public abstract void ReturnList();
 
     // // public abstract int CalculateScore();
-    // public abstract void RecordEvent();
+    public abstract string RecordEvent();
     // // public  abstract Boolean IsComplete(Boolean complete);
 
 }

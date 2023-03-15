@@ -58,9 +58,10 @@ public class CheckList : Goal
     // public override int CalculateScore() {
     //     return _CheckListScore;
     // }
-    // public override void RecordEvent() {
-    //     Console.WriteLine("salvar item na lista!");
-    // }
+    public override string RecordEvent() {
+        string completed = "[X]";
+        return completed;
+    }
     // public override Boolean IsComplete(Boolean complete) {
     //     complete = true;
     // }

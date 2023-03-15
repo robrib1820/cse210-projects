@@ -40,9 +40,10 @@ public class Eternal : Goal
     // // public override int CalculateScore() {
     // //     return _eternalScore;
     // // }
-    // public override void RecordEvent() {
-    //     Console.WriteLine("salvar item na lista!");
-    // }
+    public override string RecordEvent() {
+        string completed = "[X]";
+        return completed;
+    }
     // public override Boolean IsComplete(Boolean complete) {
     //     complete = true;
     // }

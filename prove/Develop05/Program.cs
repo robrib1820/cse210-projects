@@ -82,13 +82,16 @@ class Program
                 Console.WriteLine("Your goals are: ");
                 foreach( string goalItem in goalsList)
                 {
-                    Console.WriteLine($"[ ] {counter}. {goalItem}");
+                    Console.WriteLine($"{counter}. {goalItem}");
                     counter ++;
                 }
                 Console.WriteLine("--------------------------------------------------------");
                 Console.Write("Which goal did you accomplish? ");
                 string accomplishedGoal = Console.ReadLine();
                 int accomplished = int.Parse(accomplishedGoal);
+                goalsList[accomplished - 1] = ($"{goal.RecordEvent()} {goal.AddToList()}");
+                
+
 
                 Console.WriteLine($"You earned {pointsList[accomplished - 1]} points!");
                 points += pointsList[accomplished - 1];
