@@ -4,7 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        List<string> goalsList = new List<string>();
+        List<Goal> goalsList = new List<Goal>();
         List<int> pointsList = new List<int>();
         Boolean menu = true;
         int option = 0;
@@ -23,9 +23,8 @@ class Program
             Console.Write("Select a choice from the menu: ");
             string choice = Console.ReadLine();
             option = int.Parse(choice);
-            Simple goal = new Simple();
-            Eternal goal2 = new Eternal();
-            CheckList goal3 = new CheckList();
+            
+
             if (option == 1)
             {
                 Console.WriteLine("The types of Goals are:");
@@ -39,25 +38,45 @@ class Program
 
                 if (goalOption == 1)
                 {
-                    goal.TypeOfGoals();
-                    goalsList.Add(goal.AddToList());
-                    pointsList.Add(goal.AddPointsToList());
-
+                    Simple goal = new Simple();
+                    Console.WriteLine("What is the name of your goal? ");
+                    goal.SetGoalName(Console.ReadLine());
+                    Console.WriteLine("What is a short description of it? ");
+                    goal.SetGoalDescription(Console.ReadLine());
+                    Console.WriteLine("What is the amount of points associated with this goal? ");
+                    string pointsGoal = Console.ReadLine();
+                    goal.SetPointsGoal(int.Parse(pointsGoal));
+                    goalsList.Add(goal);
                 }
                 else if (goalOption == 2)
                 {
-                    goal2.TypeOfGoals();
-                    goal2.AddToList();
-                    goalsList.Add(goal2.AddToList());
-                    pointsList.Add(goal2.AddPointsToList());
-                    
+                    Eternal goal = new Eternal();
+                    Console.WriteLine("What is the name of your goal? ");
+                    goal.SetGoalName(Console.ReadLine());
+                    Console.WriteLine("What is a short description of it? ");
+                    goal.SetGoalDescription(Console.ReadLine());
+                    Console.WriteLine("What is the amount of points associated with this goal? ");
+                    string pointsGoal = Console.ReadLine();
+                    goal.SetPointsGoal(int.Parse(pointsGoal));
+                    goalsList.Add(goal);
                 }
                 else if (goalOption == 3)
                 {
-                    goal3.TypeOfGoals();
-                    goalsList.Add(goal3.AddToList());
-                    pointsList.Add(goal3.AddPointsToList());
-                    
+                    CheckList goal = new CheckList();
+                    Console.WriteLine("What is the name of your goal? ");
+                    goal.SetGoalName(Console.ReadLine());
+                    Console.WriteLine("What is a short description of it? ");
+                    goal.SetGoalDescription(Console.ReadLine());
+                    Console.WriteLine("What is the amount of points associated with this goal? ");
+                    string pointsGoal = Console.ReadLine();
+                    goal.SetPointsGoal(int.Parse(pointsGoal));
+                    Console.WriteLine("How many times does this goal need to be accomplished for a bonus? ");
+                    string pointBonus = Console.ReadLine();
+                    goal.SetBonusPoint(int.Parse(pointBonus));
+                    Console.WriteLine("What is the bonus for accomplishing it that many times? ");
+                    string pointBonus2 = Console.ReadLine();
+                    goal.SetTimesCompleted(int.Parse(pointBonus2));
+                    goalsList.Add(goal);
                 }
                 else{
                     Console.WriteLine("Please, select a correct option!");

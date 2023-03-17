@@ -25,15 +25,7 @@ public class Eternal : Goal
         int points = PointsOfGoal();
         return points;
     }
-    public override void TypeOfGoals() {
-        Console.WriteLine("What is the name of your goal? ");
-        SetGoalName(Console.ReadLine());
-        Console.WriteLine("What is a short description of it? ");
-        SetGoalDescription(Console.ReadLine());
-        Console.WriteLine("What is the amount of points associated with this goal? ");
-        string pointsGoal = Console.ReadLine();
-        SetPointsGoal(int.Parse(pointsGoal));
-    }
+    
     // public override void ReturnList() {
     //     Console.WriteLine(_listGoalsEternal[0]);
     // }

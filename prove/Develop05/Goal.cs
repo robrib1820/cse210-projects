@@ -2,12 +2,10 @@ using System;
 
 public abstract class  Goal
 {
-    private int _score = 0;
     private string _goalName;
     private string _goalDescription;
     
     private int _awardedPoints;
-    private List<Goal> _listGoals = new List<Goal>();
 
     //Methods
     public Goal() {
@@ -44,17 +42,10 @@ public abstract class  Goal
     // public void SetGoalPoints(int points) {
     //     _awardedPoints = points;
     // }
-
-    public List<Goal> GetListGoal() {
-        return _listGoals;
-    }
-    public List<Goal> SetListGoal(List<Goal> goal) {
-         return _listGoals = goal;
-    }
     public void testProgram() {
         Console.WriteLine($"This is your goal: {_goalName}");
     }
-    public abstract void TypeOfGoals();
+    
     public abstract string AddToList();
     public abstract int AddPointsToList();
    
