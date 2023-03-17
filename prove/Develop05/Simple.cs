@@ -1,23 +1,26 @@
 using System;
 public class Simple : Goal
 {
-    private Boolean _fullycompletedSimple = true;
+    private Boolean _fullycompletedSimple = false;
     public Simple() {
         
     }
-    
-    
     // //Methods
-    
-    
-    public Boolean completed() {
-        return _fullycompletedSimple;
-    }
-    public override string GetTheGoal() {
+    public override string ReturnList() {
         string name = GetGoalName();
         string description = GetGoalDescription();
-        string goalToAdd = ($"[ ] {name} : {description}");
-        return goalToAdd;
+        _goalToAdd = ($"[ ] {name} : {description}");
+        
+        if (IsComplete() == true)
+        {
+            _goalToAdd = ($"[x] {name} : {description}");
+        }
+        
+        return _goalToAdd;
+    }
+    public override Boolean IsComplete() {
+        return _fullycompletedSimple = true;
+        
     }
     // public override void ReturnList() {
     //     Console.WriteLine(_listGoalsSimple[0]);
@@ -30,7 +33,4 @@ public class Simple : Goal
         string completed = "[X]";
         return completed;
     }
-    // public override Boolean IsComplete(Boolean complete) {
-    //     complete = true;
-    // }
 }

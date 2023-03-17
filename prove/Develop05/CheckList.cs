@@ -2,17 +2,14 @@ using System;
 
 public class CheckList : Goal
 {
-    
     private int _bonusPoint;
     private int _timesCompleted;
     private int _counterGoal;
-    private Boolean fullycompletedCheck;
+    private Boolean _fullycompletedCheck = false;
     
     public CheckList() {
 
     }
-    
-    
     // //Methods
     public int GetBonusPoint() {
         return _bonusPoint;
@@ -26,26 +23,31 @@ public class CheckList : Goal
     public void SetTimesCompleted(int timesCompleted) {
         _timesCompleted = timesCompleted;
     }
-    public int CounterGoal() {
+    public int GetCounterGoal() {
         return _counterGoal;
     }
     public void SetCounterGoal(int CounterGoal) {
         _counterGoal = CounterGoal;
     }
-    // public override int CalculateScore() {
-    //     return _CheckListScore;
-    // }
-    public override string GetTheGoal() {
+    public override string ReturnList() {
         string name = GetGoalName();
         string description = GetGoalDescription();
-        string goalToAdd = ($"[ ] {name} : {description}");
-        return goalToAdd;
+        int completed = GetTimesCompleted();
+        int counter = GetCounterGoal();
+        if (_fullycompletedCheck == false)
+        {
+            _goalToAdd = ($"[ ] {name} : {description} -- Currently Completed: {completed} / {counter}");
+        } else 
+        {
+            _goalToAdd = ($"[ ] {name} : {description} -- Currently Completed: {completed} / {counter}");
+        }
+        return _goalToAdd;
     }
     public override string RecordEvent() {
         string completed = "[X]";
         return completed;
     }
-    // public override Boolean IsComplete(Boolean complete) {
-    //     complete = true;
-    // }
+    public override Boolean IsComplete() {
+        return _fullycompletedCheck = true;
+    }
 }

@@ -2,36 +2,28 @@ using System;
 
 public class Eternal : Goal
 {
-    private Boolean _fullycompletedSimple = false;
+    private Boolean _fullycompletedEternal = false;
     public Eternal() {
 
     }
-    
-    
-    
     // //Methods
-    
-    public Boolean completed() {
-        return _fullycompletedSimple;
-    }
-    public override string GetTheGoal() {
+    public override string ReturnList() {
         string name = GetGoalName();
         string description = GetGoalDescription();
-        string goalToAdd = ($"[ ] {name} : {description}");
-        return goalToAdd;
+        if (_fullycompletedEternal == false)
+        {
+            _goalToAdd = ($"[ ] {name} : {description}");
+        } else 
+        {
+            _goalToAdd = ($"[X] {name} : {description}");
+        }
+        return _goalToAdd;
     }
-    
-    // public override void ReturnList() {
-    //     Console.WriteLine(_listGoalsEternal[0]);
-    // }
-    // // public override int CalculateScore() {
-    // //     return _eternalScore;
-    // // }
     public override string RecordEvent() {
         string completed = "[X]";
         return completed;
     }
-    // public override Boolean IsComplete(Boolean complete) {
-    //     complete = true;
-    // }
+    public override Boolean IsComplete() {
+        return _fullycompletedEternal;
+    }
 }

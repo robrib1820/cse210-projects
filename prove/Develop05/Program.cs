@@ -89,7 +89,7 @@ class Program
                 Console.WriteLine("Your goals are: ");
                 foreach( Goal goalItem in goalsList)
                 {
-                    Console.WriteLine($"{counter}. {goalItem.GetTheGoal()}");
+                    Console.WriteLine($"{counter}. {goalItem.ReturnList()}");
                     counter ++;
                 }
                 Console.WriteLine("--------------------------------------------------------");

@@ -6,6 +6,7 @@ public abstract class  Goal
     private string _goalDescription;
     
     private int _awardedPoints;
+    protected string _goalToAdd;
 
     //Methods
     
@@ -32,22 +33,15 @@ public abstract class  Goal
     public void SetGoalDescription(string goalDescription) {
         _goalDescription = goalDescription;
     }
-    public abstract string GetTheGoal();
-
-
-
-
-    // public int GetGoalPoins() {
-    //     return _awardedPoints;
-    // }
+    public abstract string ReturnList();
+    
     // public void SetGoalPoints(int points) {
     //     _awardedPoints = points;
     // }
     
-    // public abstract void ReturnList();
 
     // // public abstract int CalculateScore();
     public abstract string RecordEvent();
-    // // public  abstract Boolean IsComplete(Boolean complete);
+    public  abstract Boolean IsComplete();
 
 }
