@@ -3,27 +3,22 @@ using System;
 public class Eternal : Goal
 {
     private Boolean _fullycompletedSimple = false;
-    protected List<string> _listGoalsEternal = new List<string>();
     public Eternal() {
 
     }
     
-    public Eternal(string goalName, string goalDescription, int pointsGoal) : base(goalName, goalDescription, pointsGoal){
-
-    }
+    
     
     // //Methods
     
     public Boolean completed() {
         return _fullycompletedSimple;
     }
-    public override string AddToList() {
-        string goalToList = ($"{GetGoalName()}: {GetGoalDescription()}");
-        return goalToList;
-    }
-    public override int AddPointsToList() {
-        int points = PointsOfGoal();
-        return points;
+    public override string GetTheGoal() {
+        string name = GetGoalName();
+        string description = GetGoalDescription();
+        string goalToAdd = ($"[ ] {name} : {description}");
+        return goalToAdd;
     }
     
     // public override void ReturnList() {

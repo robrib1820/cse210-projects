@@ -7,28 +7,13 @@ public class CheckList : Goal
     private int _timesCompleted;
     private int _counterGoal;
     private Boolean fullycompletedCheck;
-    protected List<string> _listGoalsCheck = new List<string>();
     
     public CheckList() {
 
     }
-    public CheckList(string goalName, string goalDescription, int pointsGoal) : base(goalName, goalDescription, pointsGoal){
-
-    }
+    
     
     // //Methods
-    public override string AddToList() {
-        string goalToList = ($"{GetGoalName()}: {GetGoalDescription()}");
-        return goalToList;
-    }
-    public override int AddPointsToList() {
-        int points = PointsOfGoal();
-        return points;
-    }
-    
-    // public override void ReturnList() {
-    //     Console.WriteLine(_listGoalsCheck[0]);
-    // }
     public int GetBonusPoint() {
         return _bonusPoint;
     }
@@ -50,6 +35,12 @@ public class CheckList : Goal
     // public override int CalculateScore() {
     //     return _CheckListScore;
     // }
+    public override string GetTheGoal() {
+        string name = GetGoalName();
+        string description = GetGoalDescription();
+        string goalToAdd = ($"[ ] {name} : {description}");
+        return goalToAdd;
+    }
     public override string RecordEvent() {
         string completed = "[X]";
         return completed;
