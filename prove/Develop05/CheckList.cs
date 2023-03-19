@@ -54,7 +54,7 @@ public class CheckList : Goal
         string name = GetGoalName();
         string description = GetGoalDescription();
         int points = PointsOfGoal();
-        string savedGoal = ($"'CheckList',{name},{description},{points},{_timesCompleted}, {_counterGoal}");
+        string savedGoal = ($"'CheckList',{name},{description},{points},{_timesCompleted}, {_counterGoal}, {_bonusPoint}");
         return savedGoal;
     }
 }

@@ -129,10 +129,21 @@ class Program
                         goalsList.Add(goal);
                     } else if (optionGoal == "Eternal")
                     {
-                        
+                        Eternal goal = new Eternal();
+                        goal.SetGoalName(parts[1]);
+                        goal.SetGoalDescription(parts[2]);
+                        goal.SetPointsGoal(int.Parse(parts[3]));
+                        goalsList.Add(goal);
                     } else if (optionGoal == "CheckList")
                     {
-
+                        CheckList goal = new CheckList();
+                        goal.SetGoalName(parts[1]);
+                        goal.SetGoalDescription(parts[2]);
+                        goal.SetPointsGoal(int.Parse(parts[3]));
+                        goal.SetTimesCompleted(int.Parse(parts[4]));
+                        goal.SetCounterGoal(int.Parse(parts[5]));
+                        goal.SetBonusPoint(int.Parse(parts[6]));
+                        goalsList.Add(goal);
                     }
                 }
             }
