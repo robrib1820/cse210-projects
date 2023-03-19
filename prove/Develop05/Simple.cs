@@ -29,7 +29,7 @@ public class Simple : Goal
         string name = GetGoalName();
         string description = GetGoalDescription();
         int points = PointsOfGoal();
-        string savedGoal = ($"{name},{description},{points},{_fullycompletedSimple}");
+        string savedGoal = ($"'Simple', {name},{description},{points},{_fullycompletedSimple}");
         return savedGoal;
     }
 }

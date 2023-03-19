@@ -110,6 +110,32 @@ class Program
                     }
                 }
             }
+            else if (option == 4)
+            {
+                Console.Write($"What is the filename for the goal file? ");
+                string filename = Console.ReadLine();
+                string[] lines = System.IO.File.ReadAllLines(filename);
+                foreach (string line in lines)
+                {
+                    string[] parts = line.Split(",");
+                    string optionGoal = parts[0];
+
+                    if (optionGoal == "Simple")
+                    {
+                        Simple goal = new Simple();
+                        goal.SetGoalName(parts[1]);
+                        goal.SetGoalDescription(parts[2]);
+                        goal.SetPointsGoal(int.Parse(parts[3]));
+                        goalsList.Add(goal);
+                    } else if (optionGoal == "Eternal")
+                    {
+                        
+                    } else if (optionGoal == "CheckList")
+                    {
+
+                    }
+                }
+            }
             else if (option == 5)
             {
                 int counter = 1;

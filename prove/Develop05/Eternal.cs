@@ -30,7 +30,7 @@ public class Eternal : Goal
         string name = GetGoalName();
         string description = GetGoalDescription();
         int points = PointsOfGoal();
-        string savedGoal = ($"{name},{description},{points}");
+        string savedGoal = ($"'Eternal',{name},{description},{points}");
         return savedGoal;
     }
 }
