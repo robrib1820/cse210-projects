@@ -34,14 +34,8 @@ public abstract class  Goal
         _goalDescription = goalDescription;
     }
     public abstract string ReturnList();
-    
-    // public void SetGoalPoints(int points) {
-    //     _awardedPoints = points;
-    // }
-    
-
-    // // public abstract int CalculateScore();
     public abstract string RecordEvent();
     public  abstract Boolean IsComplete();
+    public abstract string SaveGoal();
 
 }

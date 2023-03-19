@@ -10,7 +10,7 @@ public class Simple : Goal
         string name = GetGoalName();
         string description = GetGoalDescription();
         _goalToAdd = ($"[ ] {name} : {description}");
-        
+
         if (IsComplete() == true)
         {
             _goalToAdd = ($"[x] {name} : {description}");
@@ -20,17 +20,16 @@ public class Simple : Goal
     }
     public override Boolean IsComplete() {
         return _fullycompletedSimple = true;
-        
     }
-    // public override void ReturnList() {
-    //     Console.WriteLine(_listGoalsSimple[0]);
-    // }
-   
-    // // public override int CalculateScore() {
-    // //     return _simpleScore;
-    // // }
     public override string RecordEvent() {
         string completed = "[X]";
         return completed;
+    }
+    public override string SaveGoal() {
+        string name = GetGoalName();
+        string description = GetGoalDescription();
+        int points = PointsOfGoal();
+        string savedGoal = ($"{name},{description},{points},{_fullycompletedSimple}");
+        return savedGoal;
     }
 }

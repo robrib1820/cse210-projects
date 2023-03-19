@@ -26,4 +26,11 @@ public class Eternal : Goal
     public override Boolean IsComplete() {
         return _fullycompletedEternal;
     }
+    public override string SaveGoal() {
+        string name = GetGoalName();
+        string description = GetGoalDescription();
+        int points = PointsOfGoal();
+        string savedGoal = ($"{name},{description},{points}");
+        return savedGoal;
+    }
 }

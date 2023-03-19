@@ -1,3 +1,4 @@
+using System.IO; 
 using System;
 
 class Program
@@ -93,6 +94,21 @@ class Program
                     counter ++;
                 }
                 Console.WriteLine("--------------------------------------------------------");
+            }
+            else if (option == 3)
+            {
+                Console.WriteLine("What is the filename for the goal file?");
+                string fileName = Console.ReadLine();
+                File.Create(fileName).Close();
+                {
+                    using (StreamWriter outputFile = new StreamWriter(fileName))
+                    
+                    foreach (Goal goal in goalsList)
+                    {
+                        string goalSaved = goal.SaveGoal();
+                        outputFile.WriteLine(goalSaved);
+                    }
+                }
             }
             else if (option == 5)
             {

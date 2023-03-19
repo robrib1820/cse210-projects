@@ -50,4 +50,11 @@ public class CheckList : Goal
     public override Boolean IsComplete() {
         return _fullycompletedCheck = true;
     }
+    public override string SaveGoal() {
+        string name = GetGoalName();
+        string description = GetGoalDescription();
+        int points = PointsOfGoal();
+        string savedGoal = ($"{name},{description},{points},{_timesCompleted}, {_counterGoal}");
+        return savedGoal;
+    }
 }
