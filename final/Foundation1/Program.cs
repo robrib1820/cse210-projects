@@ -31,11 +31,16 @@ class Program
         comment3._personName = "Robson Ribeiro";
         comment3._commentText ="What a great spoke to our latter days!";
         video1._comments.Add(comment3);
-        
+
+        Video comments = new Video();
+        foreach ()
+        Console.WriteLine();
         video1.DisplayVideoInfo();
+        Console.WriteLine();
         video2.DisplayVideoInfo();
+        Console.WriteLine();
         video3.DisplayVideoInfo();
-        
+        Console.WriteLine();
 
     }
 }

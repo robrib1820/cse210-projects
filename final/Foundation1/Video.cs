@@ -16,10 +16,7 @@ public class Video
         }
     }
     public void DisplayVideoInfo() {
-        for (int i = 0; i < _comments.Count;i++)
-        {
+        
             Console.WriteLine($"Title: {_title}, Author: {_author}, Duration: {_duration}");
-            Console.WriteLine($"The comments from this video: {Comment.CommentTag()} ");
-        }
     }
 }
