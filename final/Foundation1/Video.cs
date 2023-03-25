@@ -4,19 +4,20 @@ public class Video
 {
     public string _title;
     public string _author;
-    public List<Comment> _comments = new List<Comment>();
-    public List<Video> _videos = new List<Video>();
+    public List<Comment> _commentsList = new List<Comment>();
     public int _duration;
+    public int _comments;
 
     //Methods
-    public void ListOdVideos() {
-        foreach (Video video in _videos)
+    public void DisplayVideoInfo() {
+        foreach (Comment comment in _commentsList)
         {
-            video.DisplayVideoInfo();
+            Console.WriteLine($"TITLE: {_title} - AUTHOR: {_author} - DURATION: {_duration}");
+            Console.WriteLine("Comments of the video:");
+            comment.CommentTag();
         }
     }
-    public void DisplayVideoInfo() {
-        
-            Console.WriteLine($"Title: {_title}, Author: {_author}, Duration: {_duration}");
+    public int NumbOfComments() {
+        return _comments;
     }
 }
