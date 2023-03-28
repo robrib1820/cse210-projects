@@ -6,19 +6,19 @@ public class Order
     private float _totalCost;
     private int _shippingCost;
     private string _country;
-    private List<string> __shippingLabel = new List<string>();
-    private List<string> _packingLabel = new List<string>();
+    // _shippingLabel  - need to be a method
+    // _packingLabel   - need to be a method
 
     public Order() {
 
     }
-    // public int CalculateTotalCost() {
-
-    // }
+    public float CalculateTotalCost() {
+        return _totalCost;
+    }
     // public string PackingLabel() {
-
+        //return a string
     // }
     // public string ShippingLabel() {
-
+        //return a string
     // }
 }

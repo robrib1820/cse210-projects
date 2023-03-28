@@ -10,7 +10,13 @@ public class Address
 
     }
     public Boolean IsUsa() {
-        return true;
+        if (_city == "USA")
+        {
+            return true;
+        } else
+        {
+            return false;
+        }
     }
     public string AddressInformation() {
         return _country + " " + _state + " " + _city + " " + _streetAddress;

@@ -3,12 +3,12 @@ using System;
 public class Customer
 {
     private string _personName;
-    private string _address;
+    private Address _address = new Address();
 
     public Customer() {
 
     }
-    public Boolean UsaCountry() {
-        return true;
+    public void UsaCountry() {
+        _address.IsUsa();
     }
 }

@@ -3,11 +3,14 @@ public class Product
 {
     private string _name;
     private string _prodID;
-    private int _price;
+    private float _price;
     private int _quantityOfProd;
 
-    public Product() {
-
+    public Product(string prodID, string name, float price, int quantityOfProd) {
+        _prodID = prodID;
+        _name = name;
+        _price = price;
+        _quantityOfProd = quantityOfProd;
     }
     // public void TotalProductPrice() {
     //     change for int
@@ -24,10 +27,10 @@ public class Product
     public void SetProdID(string prodID) {
         _prodID = prodID;
     }
-    public int GetPrice() {
+    public float GetPrice() {
         return _price;
     }
-    public void SetPrice(int price ) {
+    public void SetPrice(float price ) {
         _price = price;
     }
     public int GetQuantityOfProd() {
@@ -35,5 +38,8 @@ public class Product
     }
     public void SetQuantityOfProd(int quantityOfProd) {
         _quantityOfProd = quantityOfProd;
+    }
+    public float PriceOfProduct() {
+        return _price * _quantityOfProd;
     }
 }
