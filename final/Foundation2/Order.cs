@@ -8,15 +8,18 @@ public class Order
     private float _totalCost;
     private int _shippingCost;
     private string _country;
-    // _shippingLabel  - need to be a method
-    // _packingLabel   - need to be a method
-
     public Order() {
 
     }
     public void CalculateTotalCost() {
         Address address = new Address();
-        address.IsUsa();
+        if (address.GetIfIsUsa() == "USA")
+        {
+            SetShippingCost(5);
+        } else 
+        {
+            SetShippingCost(35);
+        }
         float total = 0;
         foreach (Product product in _listOfProducts) 
         {
@@ -24,7 +27,7 @@ public class Order
             total+= value;
         }
         Console.WriteLine($"The total cost of this order is: {total + _shippingCost}");
-        Console.WriteLine();
+        Console.WriteLine($"uai{address.GetIfIsUsa()}");
     }
     public void AddToList(Product product) {
         _listOfProducts.Add(product);

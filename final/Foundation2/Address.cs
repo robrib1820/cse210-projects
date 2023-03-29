@@ -5,9 +5,13 @@ public class Address
     private string _city;
     private string _state;
     private string _country;
+    private string _value;
 
     public Address() {
 
+    }
+    public Address(string value) {
+        _value = value;
     }
     public string GetStreetAddress() {
         return _streetAddress;
@@ -33,16 +37,12 @@ public class Address
     public void SetCountry(string country) {
         _country = country;
     }
-    public void IsUsa() {
-        Order shippingCost = new Order();
-        if (_country == "USA")
-        {
-            shippingCost.SetShippingCost(5);
-        } else
-        {
-            shippingCost.SetShippingCost(35);
-        }
+    public string GetIfIsUsa() {
+        return _value;
     }
+    // public void SetIfIsUsa(string value) {
+    //     _value = value;
+    // }
     public string AddressInformation() {
         return ($"Country: {_country}, State: {_state}, City: {_city}, Street: {_streetAddress}");
     }

@@ -7,7 +7,7 @@ class Program
         //order1
         Order order1 = new Order();
         Product product1 = new Product();
-        Address address1 = new Address();
+        Address address1 = new Address("USA");
         Customer customer1 = new Customer();
         product1.SetName("shoe");
         product1.SetProdID("001");
@@ -34,12 +34,15 @@ class Program
         address1.SetState("Paraná");
         address1.SetCountry("Brasil");
         address1.SetStreetAddress("Rua Madre Henriqueta Dominici, 750");
+        // address1.SetIfIsUsa("Yes");
         order1.AddtoListCustomer(customer1);
         order1.AddtoListAddress(address1);
 
+        Console.WriteLine("============================================================================================");
         order1.CalculateTotalCost();
         order1.PackingLabel();
         order1.ShippingLabel();
+        Console.WriteLine("============================================================================================");
 
 
         //order2
