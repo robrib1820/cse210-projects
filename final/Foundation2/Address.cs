@@ -9,16 +9,41 @@ public class Address
     public Address() {
 
     }
-    public Boolean IsUsa() {
-        if (_city == "USA")
+    public string GetStreetAddress() {
+        return _streetAddress;
+    }
+    public void SetStreetAddress(string address) {
+        _streetAddress = address;
+    }
+    public string GetCity() {
+        return _city;
+    }
+    public void SetCity(string city) {
+        _city = city;
+    }
+    public string GetState() {
+        return _state;
+    }
+    public void SetState(string state) {
+        _state = state;
+    }
+    public string GetCountry() {
+        return _country;
+    }
+    public void SetCountry(string country) {
+        _country = country;
+    }
+    public void IsUsa() {
+        Order shippingCost = new Order();
+        if (_country == "USA")
         {
-            return true;
+            shippingCost.SetShippingCost(5);
         } else
         {
-            return false;
+            shippingCost.SetShippingCost(35);
         }
     }
     public string AddressInformation() {
-        return _country + " " + _state + " " + _city + " " + _streetAddress;
+        return ($"Country: {_country}, State: {_state}, City: {_city}, Street: {_streetAddress}");
     }
 }
