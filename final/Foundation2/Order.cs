@@ -1,7 +1,7 @@
 using System;
 public class Order
 {
-    private List<string> _listOfProducts = new List<string>();
+    private List<Product> _listOfProducts = new List<Product>();
     private string _customer;
     private float _totalCost;
     private int _shippingCost;
@@ -12,8 +12,23 @@ public class Order
     public Order() {
 
     }
-    public float CalculateTotalCost() {
-        return _totalCost;
+    public void CalculateTotalCost() {
+        float total = 0;
+        foreach (Product product in _listOfProducts) 
+        {
+            float value = (product.GetPrice());
+            total+= value;
+        }
+        Console.WriteLine(total);
+    }
+    public void AddToList(Product product) {
+        _listOfProducts.Add(product);
+    }
+    public string GetCustomer() {
+        return _customer;
+    }
+    public void SetCustomer(string customer) {
+        _customer = customer;
     }
     // public string PackingLabel() {
         //return a string

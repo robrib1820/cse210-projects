@@ -6,6 +6,9 @@ public class Product
     private float _price;
     private int _quantityOfProd;
 
+    public Product() {
+
+    }
     public Product(string prodID, string name, float price, int quantityOfProd) {
         _prodID = prodID;
         _name = name;
