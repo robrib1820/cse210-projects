@@ -3,7 +3,7 @@ using System;
 public class OutdoorGatherings : Event
 {
     private string _weatherState;
-    public OutdoorGatherings(string weatherState, string eventTitle, string description, string data, string time, string address, string eventType, string specificInformation) : base(eventTitle, description, data, time, address, eventType, specificInformation) {
+    public OutdoorGatherings(string weatherState, string eventTitle, string description, string data, string time, string eventType, string specificInformation) : base(eventTitle, description, data, time, eventType, specificInformation) {
         _weatherState = weatherState;
     }
     public string GetWeatherState() {

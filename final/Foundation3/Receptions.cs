@@ -4,7 +4,7 @@ public class Receptions : Event
 {
     private string _rsvp;
 
-    public Receptions(string rsvp, string eventTitle, string description, string data, string time, string address, string eventType, string specificInformation) : base(eventTitle, description, data, time, address, eventType, specificInformation) {
+    public Receptions(string rsvp, string eventTitle, string description, string data, string time, string eventType, string specificInformation) : base(eventTitle, description, data, time, eventType, specificInformation) {
         _rsvp = rsvp;
     }
     public string GetRsvp() {

@@ -7,16 +7,18 @@ class Program
         List<Event> _listOfEvents = new List<Event>();
         Lectures event1 = new Lectures("Robson Ribeiro", 200, "imagine dragons show",
         "The band's new album tour is about to start soon in various places around the world!",
-        "04/04/2023","14:00", "Av. Francisco Matarazzo, 1705 - Água Branca, São Paulo - SP", "Lectures",
+        "04/04/2023","14:00", "Lectures",
         "Without Specific Information yet!");
+        Address address1 = new Address("Av. Francisco Matarazzo, 1705 - Água Branca, São Paulo - SP");
         Receptions event2 = new Receptions("Yes", "Robson and karlyn Wedding","A special night to celebrate this eternal bond.",
-        "26/11/2021", "20:00","R. Me. Henriqueta Dominici, 750 - Lagoa Dourada",
+        "26/11/2021", "20:00",
         "Receptions","Don't forget to take a picture with the bride and groom!");
-        OutdoorGatherings event3 = new OutdoorGatherings("The day will be sunny with few clouds", "Expo Londrina",
+        Address address2 = new Address("R. Me. Henriqueta Dominici, 330 - Lagoa Dourada");
+        OutdoorGatherings event3 = new OutdoorGatherings("The day will be sunny with a few clouds", "Expo Londrina",
         "It is the exhibition of rural products with artistic attractions and lots of fun in the city of Londrina.",
-        "06/04/2023", "08:00", "Av. Tiradentes, 6275 - Jardim Rosicler, Londrina - PR","Outdoor Gatherings",
+        "06/04/2023", "08:00","Outdoor Gatherings",
         "You can pay a fixed amount and use all the rides in the park");
-        // OutdoorGatherings event3 = new OutdoorGatherings();
+        Address address3 = new Address("Av. Tiradentes, 6275 - Jardim Rosicler, Londrina - PR");
         _listOfEvents.Add(event1);
         _listOfEvents.Add(event2);
         _listOfEvents.Add(event3);
@@ -25,46 +27,54 @@ class Program
         {
             if (evnt.GetEventType() =="Lectures")
             {
-                Console.WriteLine("================================================================");
+                Console.WriteLine("===========================");
                 Console.WriteLine("Standard Details Message");
-                Console.WriteLine("================================================================");
+                Console.WriteLine("===========================");
                 evnt.StandardDetailsMessage();
-                Console.WriteLine("================================================================");
+                address1.DisplayAddress();
+                Console.WriteLine("=======================");
                 Console.WriteLine("Full Details Message");
-                Console.WriteLine("================================================================");
+                Console.WriteLine("=======================");
                 event1.LecturesFullDetails();
-                Console.WriteLine("================================================================");
+                address1.DisplayAddress();
+                Console.WriteLine("============================");
                 Console.WriteLine("Short Description Message");
-                Console.WriteLine("================================================================");
+                Console.WriteLine("============================");
                 evnt.ShortDescriptionMessage();
+                Console.WriteLine("/---------------------------------------------------------------------------/");
 
             } else if (evnt.GetEventType() == "Receptions")
             {
-                Console.WriteLine("================================================================");
+                Console.WriteLine("===========================");
                 Console.WriteLine("Standard Details Message");
-                Console.WriteLine("================================================================");
+                Console.WriteLine("===========================");
                 evnt.StandardDetailsMessage();
-                Console.WriteLine("================================================================");
+                address2.DisplayAddress();
+                Console.WriteLine("=======================");
                 Console.WriteLine("Full Details Message");
-                Console.WriteLine("================================================================");
+                Console.WriteLine("=======================");
                 event2.ReceptionsFullDetails();
-                Console.WriteLine("================================================================");
+                address2.DisplayAddress();
+                Console.WriteLine("===========================");
                 Console.WriteLine("Short Description Message");
-                Console.WriteLine("================================================================");
+                Console.WriteLine("===========================");
                 evnt.ShortDescriptionMessage();
+                Console.WriteLine("/---------------------------------------------------------------------------/");
             } else if (evnt.GetEventType() == "Outdoor Gatherings")
             {
-                Console.WriteLine("================================================================");
+                Console.WriteLine("==========================");
                 Console.WriteLine("Standard Details Message");
-                Console.WriteLine("================================================================");
+                Console.WriteLine("==========================");
                 evnt.StandardDetailsMessage();
-                Console.WriteLine("================================================================");
+                address3.DisplayAddress();
+                Console.WriteLine("======================");
                 Console.WriteLine("Full Details Message");
-                Console.WriteLine("================================================================");
+                Console.WriteLine("======================");
                 event3.OutdoorFullDetails();
-                Console.WriteLine("================================================================");
+                address3.DisplayAddress();
+                Console.WriteLine("===========================");
                 Console.WriteLine("Short Description Message");
-                Console.WriteLine("================================================================");
+                Console.WriteLine("===========================");
                 evnt.ShortDescriptionMessage();
             }
         }
