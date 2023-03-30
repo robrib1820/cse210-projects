@@ -27,7 +27,6 @@ public class Order
             total+= value;
         }
         Console.WriteLine($"The total cost of this order is: {total + _shippingCost}");
-        Console.WriteLine($"uai{address.GetIfIsUsa()}");
     }
     public void AddToList(Product product) {
         _listOfProducts.Add(product);

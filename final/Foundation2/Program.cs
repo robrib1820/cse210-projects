@@ -4,6 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        List<Order> _listOrder = new List<Order>();
         //order1
         Order order1 = new Order();
         Product product1 = new Product();
@@ -38,29 +39,48 @@ class Program
         order1.AddtoListCustomer(customer1);
         order1.AddtoListAddress(address1);
 
-        Console.WriteLine("============================================================================================");
-        order1.CalculateTotalCost();
-        order1.PackingLabel();
-        order1.ShippingLabel();
-        Console.WriteLine("============================================================================================");
-
-
         //order2
+        Order order2 = new Order();
+        Address address2 = new Address("USA");
+        Customer customer2 = new Customer();
         Product product4 = new Product();
-        product1.SetName("television");
-        product1.SetProdID("243");
-        product1.SetPrice(1160);
-        product1.SetQuantityOfProd(1);
+        product4.SetName("television");
+        product4.SetProdID("243");
+        product4.SetPrice(1160);
+        product4.SetQuantityOfProd(1);
+        order2.AddToList(product4);
         Product product5 = new Product();
-        product1.SetName("abajur");
-        product1.SetProdID("104");
-        product1.SetPrice(20);
-        product1.SetQuantityOfProd(2);
+        product5.SetName("abajur");
+        product5.SetProdID("104");
+        product5.SetPrice(20);
+        product5.SetQuantityOfProd(2);
+        order2.AddToList(product5);
         Product product6 = new Product();
-        product1.SetName("table lack");
-        product1.SetProdID("89");
-        product1.SetPrice(87);
-        product1.SetQuantityOfProd(1);
+        product6.SetName("table lack");
+        product6.SetProdID("89");
+        product6.SetPrice(87);
+        product6.SetQuantityOfProd(1);
+        order2.AddToList(product6);
+
+        customer2.SetPersonName("Karlin Eliza Castro");
+        address2.SetCity("Salt Lake City");
+        address2.SetState("Utah");
+        address2.SetCountry("Usa");
+        address2.SetStreetAddress("278 E 1300 S");
+
+        order2.AddtoListCustomer(customer2);
+        order2.AddtoListAddress(address2);
+
+        _listOrder.Add(order1);
+        _listOrder.Add(order2);
         
+        foreach(Order order in _listOrder)
+        {
+            Console.WriteLine("============================================================================================");
+            order.PackingLabel();
+            order.ShippingLabel();
+            order.CalculateTotalCost();
+            Console.WriteLine("============================================================================================");
+        }
     }
 }
