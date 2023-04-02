@@ -3,9 +3,6 @@ public abstract class Activity
 {
     private string _data;
     private int _lenght;
-    public Activity() {
-        
-    }
 
     public Activity(string data, int lenght) {
         _data = data;
