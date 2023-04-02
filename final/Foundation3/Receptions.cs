@@ -20,10 +20,10 @@ public class Receptions : Event
         StandardDetailsMessage();
         if (_rsvp == "Yes")
         {
-            Console.WriteLine("Will attend");
+            Console.WriteLine("Will attend [x]");
         } else 
         {
-            Console.WriteLine("Will not attend");
+            Console.WriteLine("Will not attend []");
         }
     }
 

@@ -12,8 +12,9 @@ public class Order
 
     }
     public void CalculateTotalCost() {
-        Address address = new Address();
-        if (address.GetIfIsUsa() == "USA")
+        
+        Console.WriteLine("TESTEEEEE");
+        if (_listOfAddress[0].GetCountry() == "USA")
         {
             SetShippingCost(5);
         } else 
@@ -24,7 +25,8 @@ public class Order
         foreach (Product product in _listOfProducts) 
         {
             float value = (product.GetPrice());
-            total+= value;
+            int quant = product.GetQuantityOfProd();
+            total += (value * quant);
         }
         Console.WriteLine($"The total cost of this order is: {total + _shippingCost}");
     }

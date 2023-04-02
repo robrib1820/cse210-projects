@@ -41,12 +41,12 @@ class Program
 
         //order2
         Order order2 = new Order();
-        Address address2 = new Address("USA");
+        Address address2 = new Address();
         Customer customer2 = new Customer();
         Product product4 = new Product();
         product4.SetName("television");
         product4.SetProdID("243");
-        product4.SetPrice(1160);
+        product4.SetPrice(1000);
         product4.SetQuantityOfProd(1);
         order2.AddToList(product4);
         Product product5 = new Product();
@@ -58,14 +58,14 @@ class Program
         Product product6 = new Product();
         product6.SetName("table lack");
         product6.SetProdID("89");
-        product6.SetPrice(87);
+        product6.SetPrice(50);
         product6.SetQuantityOfProd(1);
         order2.AddToList(product6);
 
         customer2.SetPersonName("Karlin Eliza Castro");
         address2.SetCity("Salt Lake City");
         address2.SetState("Utah");
-        address2.SetCountry("Usa");
+        address2.SetCountry("USA");
         address2.SetStreetAddress("278 E 1300 S");
 
         order2.AddtoListCustomer(customer2);
