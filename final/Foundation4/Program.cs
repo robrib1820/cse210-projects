@@ -13,18 +13,13 @@ class Program
         cyclingActivity.SetCyclingSpeed(20);
         _listOfActivities.Add(cyclingActivity);
         Swimming swimmingActivity = new Swimming("06/04/2023",30);
-        swimmingActivity.SetNumberOfLaps(5);
+        swimmingActivity.SetNumberOfLaps(15);
         _listOfActivities.Add(swimmingActivity);
 
         foreach (Activity activity in _listOfActivities)
         {
             Console.WriteLine(activity.GetSummary());
         }
-
-
-
-
-
 
     }
 }

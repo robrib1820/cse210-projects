@@ -19,13 +19,13 @@ public class Swimming : Activity
     public override string GetSummary(){
         return ($"{GetData()} - Swimming ({GetLenght()} mim) - Distance ({GetDistance()} Km) - Speed ({GetSpeed()} Kph) - Pace ({GetPace()} mim per Km)");
     }
-    public override int GetDistance(){
+    public override double GetDistance(){
         return (_numberOfLaps * 50 / 1000);
     }
-    public override int GetSpeed(){
+    public override double GetSpeed(){
         return ((GetDistance() / GetLenght()) * 60);
     }
-    public override int GetPace(){
-        return (GetLenght() / GetDistance());
+    public override double GetPace(){
+        return (GetLenght() / GetSpeed());
     }
 }

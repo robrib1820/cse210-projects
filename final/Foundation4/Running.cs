@@ -19,13 +19,13 @@ public class Running : Activity
     public override string GetSummary(){
         return ($"{GetData()} - Running ({GetLenght()} mim) - Distance ({GetDistance()} Km) - Speed ({GetSpeed()} Kph) - Pace ({GetPace()} mim per Km)");
     }
-    public override int GetDistance(){
+    public override double GetDistance(){
         return _runningDistance;
     }
-    public override int GetSpeed(){
+    public override double GetSpeed(){
         return (_runningDistance / GetLenght()) * 60;
     }
-    public override int GetPace(){
+    public override double GetPace(){
         return GetLenght() / _runningDistance; 
     }
 }

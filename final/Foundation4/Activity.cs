@@ -17,13 +17,13 @@ public abstract class Activity
     public virtual string GetSummary(){
         return "";
     }
-    public virtual int GetDistance(){
+    public virtual double GetDistance(){
         return -1;
     }
-    public virtual int GetSpeed(){
+    public virtual double GetSpeed(){
         return -1;
     }
-    public virtual int GetPace(){
+    public virtual double GetPace(){
         return -1;
     }
 
