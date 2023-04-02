@@ -9,7 +9,6 @@ class Program
         video1._author = "Jeffrey R. Holland";
         video1._duration = 793;
         Comment comment1 = new Comment();
-        Comment commentY = new Comment();
         comment1._personsName.Add("Robson Ribeiro");
         comment1._comments.Add("What a great spoke to our latter days!");
         comment1._personsName.Add("André Luis");
@@ -28,6 +27,10 @@ class Program
         Comment comment2 = new Comment();
         comment2._personsName.Add("Karlyn Eliza");
         comment2._comments.Add("Avocato is better with sault haha!");
+        comment2._personsName.Add("Pablo Agreda");
+        comment2._comments.Add("In my country we only eat avocado with salt");
+        comment2._personsName.Add("Xavier Zapata");
+        comment2._comments.Add("An excellent, inspiring speech!");
 
         video2._commentsList.Add(comment2);
 
@@ -39,6 +42,10 @@ class Program
         Comment comment3 = new Comment();
         comment3._personsName.Add("Liz Agreda");
         comment3._comments.Add("President Nelson it's a prophet of God");
+        comment3._personsName.Add("Leidy Agreda");
+        comment3._comments.Add("This speech has helped me a lot these last few days!");
+        comment3._personsName.Add("Johel Quilarque");
+        comment3._comments.Add("Thanks for the inspiring words, President Nelson!");
         video3._commentsList.Add(comment3);
 
 
